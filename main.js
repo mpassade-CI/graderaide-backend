@@ -69,33 +69,6 @@ const Student = function(name,course,term=1){
     }
   }
 }
-
-const student1 = Student();
-    student1.courses = [
-        {
-          name: 'WDI',
-          terms: [
-            {
-              grades: [{score: 50}, {score: 70}, {score: 100}, {score: 20}]
-            },
-            {
-              grades: [{score: 40}, {score: 60}, {score: 90}, {score: 10}]
-            }
-          ],
-        },
-        {
-          name: 'Python',
-          terms: [
-            {
-              grades: [{score: 55}, {score: 75}, {score: 105}, {score: 25}]
-            },
-            {
-              grades: [{score: 45}, {score: 65}, {score: 95}, {score: 15}]
-            }
-          ],
-        },
-      ]
-console.log(student1.getAverage('WDI'))
 /*********************************
  * OUR CODE BELOW; DO NOT TOUCH! *
  *********************************/
