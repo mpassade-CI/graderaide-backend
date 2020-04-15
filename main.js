@@ -38,30 +38,29 @@ const Student = function(name,course,term=1){
       this.courses.push(course)
     },
     getAverage(course,term){
-      const student = this
       let sum = 0
-      for (let i=0; i<student.courses.length; i++){
+      for (let i=0; i<this.courses.length; i++){
         if (course===undefined && term===undefined){
-          if (student.courses[i].name===this.course){
-            for (let j=0; j<student.courses[i].terms[this.term-1].grades.length; j++){
-              sum += student.courses[i].terms[this.term-1].grades[j].score
+          if (this.courses[i].name===this.course){
+            for (let j=0; j<this.courses[i].terms[this.term-1].grades.length; j++){
+              sum += this.courses[i].terms[this.term-1].grades[j].score
             }
-            return sum / student.courses[i].terms[this.term-1].grades.length
+            return sum / this.courses[i].terms[this.term-1].grades.length
           }
         }
-        if (student.courses[i].name===course){
+        if (this.courses[i].name===course){
           if (term===undefined){
-            for (let j=0; j<student.courses[i].terms[this.term-1].grades.length; j++){
-              sum += student.courses[i].terms[this.term-1].grades[j].score
+            for (let j=0; j<this.courses[i].terms[this.term-1].grades.length; j++){
+              sum += this.courses[i].terms[this.term-1].grades[j].score
             }
-            return sum / student.courses[i].terms[this.term-1].grades.length
+            return sum / this.courses[i].terms[this.term-1].grades.length
           }
-          for (let j=0; j<student.courses[i].terms.length; j++){
+          for (let j=0; j<this.courses[i].terms.length; j++){
             if (j===term){
-              for (let k=0; k<student.courses[i].terms[j].grades.length; k++){
-                sum += student.courses[i].terms[j].grades[k].score
+              for (let k=0; k<this.courses[i].terms[j].grades.length; k++){
+                sum += this.courses[i].terms[j].grades[k].score
               }
-              return sum / student.courses[i].terms[j].grades.length
+              return sum / this.courses[i].terms[j].grades.length
             }
           }
         }
